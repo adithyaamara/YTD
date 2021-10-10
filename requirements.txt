@@ -1,0 +1,2 @@
+pytube==11.0.1
+prettytable==2.2.1
