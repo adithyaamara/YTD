@@ -16,4 +16,6 @@
  - `python ytd-gui.py (Using TKinter Gui)`
  - `python ytd.py`(Command Line usage)
 
-Comment to test branch protection rules--------------- 
+Can CodeQl stop me to spill out this Fake secret?
+
+Unique_Value = '9654896320sds2df51_'
