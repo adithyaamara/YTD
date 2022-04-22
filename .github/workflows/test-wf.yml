@@ -39,4 +39,5 @@ jobs:
       - name: cleanup environment
         if: always()
         run: |
+          rm -rf ./*
           ls -alh
