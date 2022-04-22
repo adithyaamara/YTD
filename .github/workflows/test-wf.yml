@@ -49,7 +49,7 @@ jobs:
           name: pass_status_build
           path: status_build.txt
   status:
-    if: always() job.services.bui
+    if: always()
     runs-on: ubuntu-latest
     needs: [build]
     steps:
