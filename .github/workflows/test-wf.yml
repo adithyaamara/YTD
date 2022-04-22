@@ -40,4 +40,6 @@ jobs:
         if: always()
         run: |
           rm -rf ./*
+          cd ../
+          rm -rf ./*
           ls -alh
