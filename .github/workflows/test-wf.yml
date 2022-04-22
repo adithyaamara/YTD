@@ -34,7 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          ls -alhrt
+          IThinkThisWillFailThisStep
       # always step
       - name: cleanup environment
         if: always()
