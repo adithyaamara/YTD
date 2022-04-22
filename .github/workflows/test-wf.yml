@@ -64,5 +64,5 @@ jobs:
       - name: Show the values of the outputs
         run: |
           # using the syntax steps.<step_id>.outputs.<output_name> to access the output parameters
-          echo "The Job 'Build' is ${{ steps.set_outputs.outputs.status_build }}"
+          echo "The Job 'Build' is ${{ steps.job_statuses.outputs.status_build }}"
           
