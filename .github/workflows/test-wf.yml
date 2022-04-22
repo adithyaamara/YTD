@@ -41,3 +41,28 @@ jobs:
         run: |
           rm -rf ./*
           ls -alh
+          echo ${{ job.status }} > status_build.txt
+      - name: Upload file status_build.txt as an artifact
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: pass_status_build
+          path: status_build.txt
+  status:
+    if: always() job.services.bui
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Download artifact pass_status_build
+        uses: actions/download-artifact@v1
+        with:
+          name: pass_status_build
+      - name: Set the statuses of Job 01 as output for this step
+        id: job_statuses
+        run: |
+          echo "::set-output name=status_build::$(<pass_status_build/status_build.txt)"
+      - name: Show the values of the outputs
+        run: |
+          # using the syntax steps.<step_id>.outputs.<output_name> to access the output parameters
+          echo "The Job 'Build' is ${{ steps.set_outputs.outputs.status_build }}"
+          
